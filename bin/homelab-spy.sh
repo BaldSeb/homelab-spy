@@ -3,6 +3,9 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "${SCRIPT_DIR}/../lib/menu.sh"
 source "${SCRIPT_DIR}/../lib/system.sh"
+source "${SCRIPT_DIR}/../lib/docker.sh"
+source "${SCRIPT_DIR}/../lib/service.sh"
+source "${SCRIPT_DIR}/../lib/network.sh"
 
 main() {
     if ! command -v gum >/dev/null 2>&1; then
@@ -21,6 +24,17 @@ main() {
             ;;
         "Docker Info")
             echo "Docker info selected"
+            display_docker_containers
+            ;;
+        "Service Check")
+            url="$(gum input --placeholder "https://example.com")"
+            if [ -z "$url" ]; then
+                exit 0
+            fi
+            check_service "$url"
+            ;;
+        "Network Info")
+            display_network_info
             ;;
         "exit")
             echo "Exiting..."
@@ -33,3 +47,5 @@ main() {
 }
 
 main
+
+# aIf you can read this, my brain is going crazy from all this bash code...
