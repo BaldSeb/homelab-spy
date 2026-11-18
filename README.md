@@ -10,5 +10,3 @@ Dependencies:
 - bash (duh)
 - gum
 - docker (for the docker part)
-
-So the actual file is in ../bin/homelab-spy.sh, too lazy to take it out.

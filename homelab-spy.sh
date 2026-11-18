@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "${SCRIPT_DIR}/../lib/menu.sh"
-source "${SCRIPT_DIR}/../lib/system.sh"
-source "${SCRIPT_DIR}/../lib/docker.sh"
-source "${SCRIPT_DIR}/../lib/service.sh"
-source "${SCRIPT_DIR}/../lib/network.sh"
+source "${SCRIPT_DIR}/lib/menu.sh"
+source "${SCRIPT_DIR}/lib/system.sh"
+source "${SCRIPT_DIR}/lib/docker.sh"
+source "${SCRIPT_DIR}/lib/service.sh"
+source "${SCRIPT_DIR}/lib/network.sh"
 
 main() {
     if ! command -v gum >/dev/null 2>&1; then
