@@ -15,7 +15,7 @@ main() {
 
     gum style --foreground 212 --border normal --padding "1" --margin "1" "Welcome to Homelab Spy!"
 
-    choice=$(show_main_menu)
+    choice=$(show_menu)
 
     case "$choice" in
         "System Info")
@@ -24,7 +24,7 @@ main() {
             ;;
         "Docker Info")
             echo "Docker info selected"
-            display_docker_containers
+            show_docker_info
             ;;
         "Service Check")
             url="$(gum input --placeholder "https://example.com")"
@@ -48,4 +48,4 @@ main() {
 
 main
 
-# aIf you can read this, my brain is going crazy from all this bash code...
+# If you can read this, my brain is going crazy from all this bash code...

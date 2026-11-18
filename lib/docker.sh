@@ -6,7 +6,7 @@ docker_is_running() {
     docker info >/dev/null 2>&1
 }
 
-display_docker_containers() {
+show_docker_info() {
     if ! docker_is_installed; then
         echo "Docker is not installed."
         return 1
